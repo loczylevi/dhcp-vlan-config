@@ -1,0 +1,56 @@
+
+
+en
+
+privilidzs mod
+
+conf t
+
+fasz tudja mia ennek a neve
+
+int g0/2
+
+basztogatjuk beállitju ka gigabith 0/2 portot
+
+sw mode trunk
+
+_____________________________________________
+
+a trunk -ölés azt jelenti hogy megioldjuk azt hogy a swtichek tudjanak egymással kommunikálni ehez azt kell hogy trunk modba kapcsoljuk azt a kábelt amely a 2 switch vagy router össze van dugva
+
+
+ex
+
+vlan 10
+
+létrehozzuk a 10 es vlant
+
+name berugy
+
+int range fa0/1-5
+
+
+_________________________
+
+a range el több portot csatlakozot lewhet baszogatni
+
+ezután azt mondtuk a fenti példában hogy 0-5 is baszogatjuk a portokat
+
+sw mode acces
+
+sw acces vlan 10
+
+beraktuk a portokat (0-5-ig) a Vlan 10 be!!  ( nem biztonságok vlan 1 be hagyni a portokat tudod mert az veszélyes)
+
+
+ex
+
+vlan 20
+name cuccmok
+ex
+
+int range f0/6-15
+sw mode acces
+sw acces vlan 20
+
+ex
