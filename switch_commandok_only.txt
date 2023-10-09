@@ -1,0 +1,18 @@
+en
+conf t
+vlan 10
+name vencel_buzi
+ex
+int range f0/1-5
+sw mode acces 
+sw acces vlan 10
+
+ex
+vlan 20
+name hunor
+ex
+
+int range f0/6-15
+sw mode acces
+sw acces vlan 20
+ex
