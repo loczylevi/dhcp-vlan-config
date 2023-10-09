@@ -47,7 +47,7 @@ conf t
 
 int g0/0.10
 
-létrehozzuk a 10-es szubinterfészet
+létrehozzuk a 10-es szubinterfészet a gigabit 0/0 porton csatlakozon kábelen fasz tudja
 
 és természetesen a szub (szabi) interfésznek adunk ip cimert is (lehetöleg olyat amit kizártunk)
 
