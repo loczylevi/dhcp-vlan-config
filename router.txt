@@ -1,0 +1,190 @@
+Router(config)#ip dhcp e
+Router(config)#ip dhcp excluded-address 172.16.1.0 172.16.1.5
+Router(config)#do sh running-config
+Building configuration...
+
+Current configuration : 635 bytes
+!
+version 15.1
+no service timestamps log datetime msec
+no service timestamps debug datetime msec
+no service password-encryption
+!
+hostname Router
+!
+!
+!
+!
+ip dhcp excluded-address 172.16.1.0 172.16.1.5
+!
+!
+!
+!
+ip cef
+no ipv6 cef
+!
+!
+!
+!
+license udi pid CISCO1941/K9 sn FTX15244G0E-
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+spanning-tree mode pvst
+!
+!
+!
+!
+!
+!
+interface GigabitEthernet0/0
+ no ip address
+ duplex auto
+ speed auto
+!
+interface GigabitEthernet0/1
+ no ip address
+ duplex auto
+ speed auto
+!
+interface Vlan1
+ no ip address
+ shutdown
+!
+ip classless
+!
+ip flow-export version 9
+!
+!
+!
+!
+!
+!
+!
+line con 0
+!
+line aux 0
+!
+line vty 0 4
+ login
+!
+!
+!
+end
+
+
+Router(config)#ip dc
+Router(config)#ip dhcp e
+Router(config)#ip dhcp excluded-address ?
+  A.B.C.D  Low IP address
+Router(config)#ip dhcp excluded-address 172.0.0.0 ?
+  A.B.C.D  High IP address
+  <cr>
+Router(config)#ip dhcp excluded-address 172.16.2.0 172.16.2.5
+Router(config)#ip dhcp ?
+  excluded-address  Prevent DHCP from assigning certain addresses
+  pool              Configure DHCP address pools
+  relay             DHCP relay agent parameters
+Router(config)#ip dhcp pool vlan10
+Router(dhcp-config)#network 172.16.1.0
+% Incomplete command.
+Router(dhcp-config)#network 172.16.1.0 255.255.255.0
+Router(dhcp-config)#defa
+Router(dhcp-config)#default-router 172.16.1.1 
+Router(dhcp-config)#dns?
+dns-server  
+Router(dhcp-config)#dns
+Router(dhcp-config)#dns-server 8.8.8.8
+Router(dhcp-config)#ex
+Router(config)#
+Router(config)#
+Router(config)#ip dh
+Router(config)#ip dhcp p
+Router(config)#ip dhcp pool vlan20
+Router(dhcp-config)#network 172.16.2.0 255.255.255.0
+Router(dhcp-config)#defa
+Router(dhcp-config)#default-router 172.16.2.1 
+Router(dhcp-config)#dns-server 8.8.8.8
+Router(dhcp-config)#ex
+Router(config)#
+Router(config)#
+Router(config)#int ^Z
+Router#
+%SYS-5-CONFIG_I: Configured from console by console
+
+Router#
+Router#
+Router#
+Router#
+Router#
+Router#
+Router#
+Router#en
+Router#
+Router#
+Router#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+Router(config)#
+Router(config)#
+Router(config)#
+Router(config)#int g0/0.10
+Router(config-subif)#
+%LINK-5-CHANGED: Interface GigabitEthernet0/0.10, changed state to up
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEthernet0/0.10, changed state to up
+
+Router(config-subif)#
+Router(config-subif)#
+Router(config-subif)#
+Router(config-subif)#
+Router(config-subif)#ip add
+Router(config-subif)#ip address 172.16.1.1 255.255.255.0
+
+% Configuring IP routing on a LAN subinterface is only allowed if that
+subinterface is already configured as part of an IEEE 802.10, IEEE 802.1Q,
+or ISL vLAN.
+
+Router(config-subif)#enc
+Router(config-subif)#encapsulation do
+Router(config-subif)#encapsulation dot1Q 10
+Router(config-subif)#ip address 172.16.1.1 255.255.255.0
+Router(config-subif)#ex
+Router(config)#
+Router(config)#
+Router(config)#
+Router(config)#int g0/0.20
+Router(config-subif)#
+%LINK-5-CHANGED: Interface GigabitEthernet0/0.20, changed state to up
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEthernet0/0.20, changed state to up
+
+Router(config-subif)#
+Router(config-subif)#
+Router(config-subif)#enc dot1q
+% Incomplete command.
+Router(config-subif)#enc dot1q 20
+Router(config-subif)#
+Router(config-subif)#
+Router(config-subif)#ip add
+Router(config-subif)#ip address 172.16.2.1 255.255.255.0
+Router(config-subif)#ex
+Router(config)#
+Router(config)#
+Router(config)#
+Router(config)#
+Router(config)#
+Router(config)#
+Router(config
+
+
+Router con0 is now available
+
+Press RETURN to get started.
