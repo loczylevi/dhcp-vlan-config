@@ -1,0 +1,67 @@
+// 1. is kizárjuk azokat az ip cimeket amiket nem oszthat ki a DHCP
+
+ip dhcp excluded-address 172.16.1.0 172.16.1.5
+
+________________________________________________
+
+vagyis a fenti kod a 172.16.1.0 -tól 172.16.1.5 -ig kizárja az a 6 db cimet! vagyis az 1. ip cim hogy mettöl a 2. ip cim hogy meddig
+
+ha valamiben bizonytalan vagy a CLI-ben nyomj "?" -et!
+
+ip dhcp pool vlan10
+
+________________________________________________
+
+létrehozzuk a vlan10 -es dhcp szervert
+
+network 172.16.1.0 255.255.255.0
+
+________________________________________________
+
+network commandal megadjuk hogy milyen ip cim tartományban ossza ki a dhcp szerver az ip cimeket fenti példánkban a  172.16.1.0 ip cimtöl fogja elkezdeni kiosztani
+
+
+default-router 172.16.1.1 
+
+________________________________________________
+
+a router ip cime
+
+dns-server 8.8.8.8
+
+________________________________________________
+
+a DNS az falkultativ opcionális nem kötelező
+
+ip dhcp pool vlan20
+
+network 172.16.2.0 255.255.255.0
+
+default-router 172.16.2.1 
+
+dns-server 8.8.8.8
+
+en 
+
+conf t
+
+int g0/0.10
+
+létrehozzuk a 10-es szubinterfészet
+
+és természetesen a szub (szabi) interfésznek adunk ip cimert is (lehetöleg olyat amit kizártunk)
+
+encapsulation dot1Q 10
+
+engedályezzük hogy a szub interfésznek adjuk ip cimet a 'enc dot1q' parancsaal
+
+ip address 172.16.1.1 255.255.255.0
+
+int g0/0.20
+
+enc dot1q 20
+
+ip address 172.16.2.1 255.255.255.0
+
+
+
